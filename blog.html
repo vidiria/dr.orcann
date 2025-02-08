@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog do Dr. Gustavo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Josefin+Sans:wght@400;600&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /*************************************
+        * RESET BÁSICO e VARIÁVEIS DE COR
+        *************************************/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PT Sans', sans-serif;
+            background: #eaeaea;
+            overflow-x: hidden;
+            /* Evita scroll horizontal */
+        }
+
+        :root {
+            --color-primary: #1F2937;
+            /* Fundo header (azul escuro/cinza) */
+            --color-accent: #c49b3f;
+            /* Dourado/laranja queimado */
+            --color-white: #ffffff;
+            --color-text: #333333;
+        }
+
+        /*************************************
+        * HEADER
+        *************************************/
+        .site-header {
+            background-color: var(--color-primary);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: var(--color-white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 16px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--color-white);
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--color-accent);
+        }
+
+        .header-cta a.btn-cta {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-cta a.btn-cta:hover {
+            background-color: #B18935;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* BLOG HERO */
+        .blog-hero {
+            position: relative;
+            width: 100%;
+            min-height: 40vh;
+            background: url('images/blog-hero.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .blog-hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 600px;
+        }
+
+        .blog-hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .blog-hero-content p {
+            font-size: 1.2rem;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        /* LISTA DE ARTIGOS */
+        .blog-lista {
+            padding: 40px 16px;
+            background: #f8f8f8;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-filtro {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .blog-filtro button {
+            background: var(--color-accent);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 8px 16px;
+            margin: 0 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s;
+        }
+
+        .blog-filtro button:hover {
+            background-color: #B18935;
+        }
+
+        /* GRID DE ARTIGOS */
+        .artigos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .artigo-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .artigo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .artigo-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .artigo-conteudo {
+            padding: 16px;
+        }
+
+        .artigo-conteudo h3 {
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 8px;
+            color: var(--color-primary);
+        }
+
+        .artigo-conteudo p {
+            font-family: 'PT Sans', sans-serif;
+            color: #555;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .btn-leia-mais {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s;
+        }
+
+        .btn-leia-mais:hover {
+            background: #B18935;
+        }
+
+        /*************************************
+        * FOOTER
+        *************************************/
+        .site-footer {
+            background-color: var(--color-primary);
+            padding: 24px 16px;
+            color: var(--color-white);
+        }.footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-links a {
+            color: var(--color-white);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">Dr. Gustavo Mendes</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#hero">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#tratamentos">Tratamentos</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="index.html#contato" class="btn-cta" id="btnAgendarHeader">Agende Agora</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-hero" data-aos="fade-up">
+        <div class="blog-hero-content">
+            <h1>Blog / Artigos</h1>
+            <p>Notícias, reflexões e estudos sobre saúde mental, IA, canabidiol e muito mais!</p>
+        </div>
+    </section>
+
+    <section class="blog-lista" data-aos="fade-up">
+        <div class="container blog-container">
+            <div class="blog-filtro">
+                <button>Todas</button>
+                <button>Canabidiol</button>
+                <button>IA</button>
+                <button>Saúde Mental</button>
+            </div>
+
+            <div class="artigos-grid">
+                <article class="artigo-card">
+                    <div class="artigo-imagem">
+                        <img src="images/artigo1.jpg" alt="Capa do artigo 1">
+                    </div>
+                    <div class="artigo-conteudo">
+                        <h3>Como o Canabidiol Ajuda na Ansiedade</h3>
+                        <p>Pesquisas recentes mostram que o uso terapêutico do CBD...</p>
+                        <a href="#" class="btn-leia-mais">Leia Mais</a>
+                    </div>
+                </article>
+
+                <article class="artigo-card">
+                    <div class="artigo-imagem">
+                        <img src="images/artigo2.jpg" alt="Capa do artigo 2">
+                    </div>
+                    <div class="artigo-conteudo">
+                        <h3>A Importância de IA na Análise de Narrativas</h3>
+                        <p>Entenda como a tecnologia pode potencializar...</p>
+                        <a href="#" class="btn-leia-mais">Leia Mais</a>
+                    </div>
+                </article>
+
+                </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>© 2025 Dr. Gustavo Mendes | OrCann. Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+            </ul>
+            <div class="footer-contact">
+                <p>Siga nas redes sociais:
+                    <a href="#">Instagram</a> |
+                    <a href="#">LinkedIn</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 1000
+            });
+        });
+    </script>
+</body>
+
+</html>
