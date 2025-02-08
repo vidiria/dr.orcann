@@ -25,6 +25,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Josefin+Sans:wght@400;600&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Josefin+Sans:wght@400;600&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
@@ -126,42 +132,50 @@
       }
 
       /* Media query para mobile */
-      @media (max-width: 768px) {
-          .header-container {
-              flex-wrap: wrap; /* Permite que os elementos quebrem */
-          }
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                justify-content: space-between; /* Ajuste para mobile */
+            }
 
-          .main-nav {
-              display: none; /* Esconde o menu principal por padrão */
-              width: 100%; /* Ocupa toda a largura */
-              order: 3;
-          }
+            .main-nav {
+                display: none; /* Esconde o menu principal no mobile */
+                width: 100%;
+                order: 3;
+            }
 
-          .main-nav.active {
-              display: flex; /* Mostra o menu quando a classe 'active' é adicionada */
-          }
+            .main-nav.active {
+                display: flex;
+            }
 
-          .main-nav ul {
-              flex-direction: column; /* Itens do menu em coluna */
-              width: 100%;
-              text-align: center;
-          }
-          .main-nav ul li{
-            padding: 5px;
-          }
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .main-nav ul li{
+              padding: 5px;
+            }
 
-          .menu-toggle {
-              display: block; /* Mostra o botão do menu hambúrguer */
-              order: 2;
-          }
-          .header-cta{
-            order: 4;
-            margin: 0 auto;
-          }
-          .logo{
-            order: 1;
-          }
-      }
+            .menu-toggle {
+                display: block; /* Mostra o botão do menu hambúrguer */
+                order: 2;
+            }
+
+            .header-cta a.btn-cta {
+              font-size: 1rem; /* Reduz um pouco o tamanho da fonte */
+              padding: 8px 16px; /* Reduz um pouco o padding */
+            }
+            .header-cta{
+              order: 4;
+            }
+            .logo{
+              order: 1;
+            }
+            .logo a {
+                font-size: 1.2rem; /* Reduz a fonte do logo no mobile */
+            }
+        }
 
 
         /* HERO SLIDER */
@@ -171,6 +185,13 @@
             height: 100vh;
             overflow: hidden;
             background: #000;
+             margin-top: 68px; /* Add margin top equal to header height */
+        }
+        /* Add this media query to adjust margin on smaller screens */
+        @media (max-width: 768px) {
+          .hero-container {
+            margin-top: 58px;
+          }
         }
 
         .slide {
@@ -342,13 +363,14 @@
         }
 
         @media (max-width: 768px) {
-          .sobre-container {
-              flex-direction: column;
-              align-items: center;
-          }
-           .sobre-texto {
-              text-align: center;
-          }
+            .sobre-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sobre-texto {
+                text-align: center;
+            }
         }
 
 
@@ -427,7 +449,7 @@
             color: #333;
         }
 
-        .treatment-card p {
+  .treatment-card p {
             font-family: 'PT Sans', sans-serif;
             color: #555;
             line-height: 1.4;
@@ -470,7 +492,7 @@
           position: absolute;
           top: 10px;
           right: 15px;
-font-size: 28px;
+          font-size: 28px;
           font-weight: bold;
           cursor: pointer;
       }
@@ -497,34 +519,42 @@ font-size: 28px;
       }
 
         /* Media query para Mobile */
-      @media (max-width: 768px) {
-          .treatments-main-content {
-              grid-template-columns: 1fr; /* 1 coluna no mobile */
-          }
+        @media (max-width: 768px) {
+            .treatments-main-content {
+                grid-template-columns: 1fr; /* 1 coluna no mobile */
+            }
 
-          .treatment-card {
-              display: flex; /* Flexbox para inverter a ordem */
-              align-items: center; /* Centraliza verticalmente */
-              text-align: right;
-          }
+            .treatment-card {
+                display: flex;         /* Flexbox para inverter a ordem */
+                align-items: center; /* Centraliza verticalmente */
+                text-align: right;    /* Alinha o texto à direita */
+                padding: 16px;       /* Reduz um pouco o padding */
 
-          .treatment-card .icon {
-              margin-left: 12px;
-              margin-bottom: 0;
-              order: 2; /* Ícone depois do título */
-          }
+            }
 
-          .treatment-card h3 {
-              order: 1; /* Título antes do ícone */
-          }
+            .treatment-card .icon {
+                margin-left: 12px; /*Espaço entre icone e texto*/
+                margin-bottom: 0;
+                order: 2;          /* Ícone depois do título */
+                flex-shrink: 0;    /* Impede que o ícone seja comprimido */
 
-          .desktop-only {
-              display: none; /* Esconde o parágrafo no mobile */
-          }
-          .treatment-card:hover{
-            transform: scale(1.02);
-          }
-      }
+            }
+
+            .treatment-card h3 {
+                order: 1;          /* Título antes do ícone */
+                font-size: 1rem;  /* Reduz um pouco o tamanho da fonte */
+                margin-bottom: 0; /* Remove a margem inferior */
+                text-align: left; /*Título alinhado à esquerda*/
+            }
+
+
+            .desktop-only {
+                display: none; /* Esconde o parágrafo no mobile */
+            }
+            .treatment-card:hover{
+              transform: scale(1.02);
+            }
+        }
 
       /* ============== SEÇÃO METODOLOGIA + DEPOIMENTOS ============== */
       .metodologia-depoimentos-section {
@@ -859,6 +889,7 @@ font-size: 28px;
     .footer-links a:hover {
         color: var(--color-accent);
     }
+
     /* --- (FIM DO CSS) --- */
     </style>
 </head>
@@ -901,7 +932,7 @@ font-size: 28px;
         <div class="item" style="background-image: url('https://i.postimg.cc/DZfgR0s8/Finland.jpg');">
             <div class="content">
               <h2 class="name" id="headline-domicilio">Atendimento a Domicílio</h2>
-              <p class="description" id="subheadline-domicilio">Foco 100% no paciente, no local de sua preferência.</p>
+             <p class="description" id="subheadline-domicilio">Foco 100% no paciente, no local de sua preferência.</p>
                 <a class="cta" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-domicilio subheadline-domicilio">Falar no WhatsApp</a>
             </div>
         </div>
@@ -919,7 +950,8 @@ font-size: 28px;
                <h2 class="name" id="headline-canabidiol">Uso de Canabidiol e Narrativas</h2>
                <p class="description" id="subheadline-canabidiol">Tratamento moderno (quando indicado) e abordagem humanizada.</p>
                 <a class="cta" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-canabidiol subheadline-canabidiol">Entre em Contato</a>
-            </div></div>
+            </div>
+          </div>
         </div>
 
         <div class="slider-controls">
@@ -928,10 +960,10 @@ font-size: 28px;
         </div>
     </div>
 
-    <section id="sobre" class="sobre-section" data-aos="fade-up" role="region" aria-label="Sobre o Dr. Gustavo">
+    <section id="sobre" class="sobre-section" data-aos="fade-up" role="region" aria-label="Sobre o Dr. Gustavo Mendes">
       <div class="sobre-container">
         <div class="sobre-img">
-       <img src="foto.jpg" alt="Dr. Gustavo Mendes - Psiquiatra Especialista em Saúde Mental" width="400" height="400">
+          <img src="images/dr-gustavo.jpg" alt="Dr. Gustavo Mendes - Psiquiatra Especialista em Saúde Mental" width="400" height="400">
         </div>
         <div class="sobre-texto">
           <h2>Sobre o Dr. Gustavo Mendes</h2>
@@ -1169,7 +1201,7 @@ font-size: 28px;
           <div class="modal-content">
             <span class="close-modal" data-close="modalLuto" aria-label="Fechar modal">&times;</span>
             <h3 id="luto-conteudo">Luto</h3>
-            <p>O luto é um processo natural de adaptação a uma<p>O luto é um processo natural de adaptação a uma perda significativa. Ofereço acolhimento e suporte para ajudar você a lidar com as emoções do luto, encontrar significado e seguir em frente.</p>
+            <p>O luto é um processo natural de adaptação a uma perda significativa.  Ofereço acolhimento e suporte para ajudar você a lidar com as emoções do luto, encontrar significado e seguir em frente.</p>
               <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                    <li>Acolhimento e validação das emoções do luto.</li>
@@ -1295,7 +1327,7 @@ font-size: 28px;
         </p>
       </div>
     </div>
-<section class="form-container" id="form-lead">
+ <section class="form-container" id="form-lead">
     <h2>Solicite um Contato</h2>
     <p>Preencha o formulário abaixo e entraremos em contato para agendar sua consulta ou esclarecer suas dúvidas.</p>
     <form action="#" method="post">
