@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Gustavo Mendes — Psiquiatra Especialista em Saúde Mental</title>
     <meta name="description" content="Dr. Gustavo Mendes é psiquiatra especialista em saúde mental, com foco em ansiedade, depressão, autismo (TEA), burnout, TDAH e mais. Consultas de 2h, atendimento domiciliar, uso de IA e canabidiol (quando indicado).">
-    <meta name="keywords" content="psiquiatra, saúde mental, ansiedade, depressão, autismo, TEA, burnout, TDAH, insônia, compulsão alimentar, traumas, luto, canabidiol, atendimento domiciliar, consulta online, Dr. Gustavo Mendes, [SUA CIDADE/REGIÃO]">
+    <meta name="keywords" content="psiquiatra, saúde mental, ansiedade, depressão, autismo, TEA, burnout, TDAH, insônia, compulsão alimentar, traumas, luto, canabidiol, atendimento domiciliar, consulta online, Dr. Gustavo Mendes">
     <meta name="author" content="Dr. Gustavo Mendes">
     <meta property="og:title" content="Dr. Gustavo Mendes — Psiquiatra Especialista em Saúde Mental">
     <meta property="og:description" content="Consultas de 2h, atendimento domiciliar e abordagens inovadoras para ansiedade, depressão, autismo e mais.">
@@ -20,21 +20,12 @@
     <link rel="alternate" href="dr.orcann.com" hreflang="pt-br" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Josefin+Sans:wght@400;600&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Josefin+Sans:wght@400;600&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
-        /* --- (INÍCIO DO CSS) --- */
         * {
             margin: 0;
             padding: 0;
@@ -43,670 +34,440 @@
 
         body {
             font-family: 'PT Sans', sans-serif;
-            background: #eaeaea;
+            background: #f7f7f7;
+            color: #2d2d2d;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
         :root {
             --color-primary: #1F2937;
-            --color-accent: #c49b3f;
+            --color-accent: #D4A017;
             --color-white: #ffffff;
-            --color-text: #333333;
+            --color-text: #4A4A4A;
+            --gradient-primary: linear-gradient(135deg, #1F2937, #374151);
+            --gradient-accent: linear-gradient(135deg, #D4A017, #B18935);
         }
 
-        /* HEADER */
+        /* Botão Reutilizável */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--gradient-accent);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            min-width: 100px;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(212, 160, 23, 0.4);
+        }
+
+        /* Header */
         .site-header {
-            background-color: var(--color-primary);
-            position: fixed; /* Fixa o header no topo */
+            background: var(--gradient-primary);
+            position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            z-index: 100; /* Garante que o header fique acima de outros elementos */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil (opcional) */
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
-
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo a {
-            text-decoration: none;
-            color: var(--color-white);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            gap: 16px;
-        }
-
-        .main-nav a {
-            text-decoration: none;
-            color: var(--color-white);
-            font-family: 'Josefin Sans', sans-serif;
-            font-weight: 400;
-            transition: color 0.3s ease;
-        }
-
-        .main-nav a:hover {
-            color: var(--color-accent);
-        }
-        .main-nav a.active {
-            color: var(--color-accent);
-        }
-
-        .header-cta a.btn-cta {
-            background-color: var(--color-accent);
-            color: var(--color-white);
             padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo a {
+            color: var(--color-white);
             font-family: 'Montserrat', sans-serif;
-            transition: background-color 0.3s ease;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
         }
-
-        .header-cta a.btn-cta:hover {
-            background-color: #B18935;
-        }
-
-        /* Estilos para o menu hambúrguer (mobile) */
         .menu-toggle {
+            display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
             color: var(--color-white);
+            font-size: 1.8rem;
             cursor: pointer;
-            display: none; /* Escondido por padrão (no desktop) */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        .menu-toggle i{
-            pointer-events: none;
+        .main-nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
         }
-
-        /* Media query para mobile */
+        .main-nav a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--color-accent);
+        }
         @media (max-width: 768px) {
             .header-container {
-                flex-wrap: wrap;
-                justify-content: space-between; /* Ajuste para mobile */
+                padding: 10px 15px;
+                position: relative;
             }
-
-            .main-nav {
-                display: none; /* Esconde o menu principal no mobile */
-                width: 100%;
-                order: 3;
-            }
-
-            .main-nav.active {
-                display: flex;
-            }
-
-            .main-nav ul {
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-            }
-            .main-nav ul li{
-                padding: 5px;
-            }
-
+            .logo { order: 1; }
             .menu-toggle {
-                display: block; /* Mostra o botão do menu hambúrguer */
+                display: block;
                 order: 2;
             }
-
-            .header-cta a.btn-cta {
-                font-size: 1rem; /* Reduz um pouco o tamanho da fonte */
-                padding: 8px 16px; /* Reduz um pouco o padding */
+            .header-cta { order: 3; }
+            .main-nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: var(--color-primary);
+                padding: 15px 0;
             }
-            .header-cta{
-                order: 4;
+            .main-nav.active {
+                display: block;
             }
-            .logo{
-                order: 1;
+            .main-nav ul {
+                flex-direction: column;
+                text-align: center;
             }
-            .logo a {
-                font-size: 1.2rem; /* Reduz a fonte do logo no mobile */
-            }
+            .main-nav ul li { padding: 10px 0; }
+            .logo a { font-size: 1.3rem; }
+            .btn { padding: 8px 16px; font-size: 0.9rem; min-width: 90px; }
         }
 
-
-        /* HERO SLIDER */
+        /* Hero Slider */
         .hero-container {
             position: relative;
-            width: 100%;
             height: 100vh;
-            overflow: hidden;
+            margin-top: 60px;
             background: #000;
-            margin-top: 68px; /* Add margin top equal to header height */
+            overflow: hidden;
         }
-        /* Add this media query to adjust margin on smaller screens */
-        @media (max-width: 768px) {
-            .hero-container {
-                margin-top: 58px;
-            }
-        }
-
         .slide {
             position: relative;
             width: 100%;
             height: 100%;
         }
-
         .item {
             position: absolute;
             inset: 0;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            transition: 0.5s;
             opacity: 0;
+            transition: opacity 0.5s ease;
         }
-
-        .item.active {
-            opacity: 1;
-            z-index: 1;
-        }
-
+        .item.active { opacity: 1; z-index: 1; }
         .content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            width: 80%;
-            max-width: 600px;
-            color: #ffffff;
+            color: var(--color-white);
+            width: 90%;
+            max-width: 700px;
             animation: fadeUp 1s ease-in-out forwards;
-            font-family: 'PT Sans', sans-serif;
         }
         .content .name {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
             font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
-
         .content .description {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.4;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
         }
-
-        .content a.cta {
-            display: inline-block;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            background: var(--color-accent);
-            color: var(--color-white);
-            border-radius: 50px;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .content a.cta:hover {
-            background-color: #B18935;
-        }
-
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -40%);
-                filter: blur(33px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-                filter: blur(0);
-            }
+            from { opacity: 0; transform: translate(-50%, -40%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
         }
-
         .slider-controls {
             position: absolute;
-            bottom: 30px;
+            bottom: 25px;
             width: 100%;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             z-index: 10;
         }
-
         .slider-controls button {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            border: 1px solid #000;
-            background: #fff;
+            border: none;
+            background: rgba(255,255,255,0.9);
             cursor: pointer;
-            transition: 0.3s;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
-
         .slider-controls button:hover {
-            background: #ababab;
-            color: #fff;
+            background: var(--color-accent);
+            color: var(--color-white);
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .hero-container { margin-top: 50px; }
+            .content .name { font-size: 1.8rem; }
+            .content .description { font-size: 1rem; }
+            .slider-controls button { width: 40px; height: 40px; }
         }
 
-        /* SEÇÕES GERAIS */
-        .sobre-section,
-        .blog-section,
-        .cta-final-section,
-        .contato-section {
-            padding: 40px 16px;
+        /* Seções Gerais */
+        .sobre-section, .tratamentos-section, .metodologia-depoimentos-section, .form-container {
+            padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #fff;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        /* SEÇÃO SOBRE */
+        /* Sobre */
         .sobre-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 32px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
         }
-
         .sobre-img img {
             width: 100%;
             max-width: 400px;
-            border-radius: 8px;
+            border-radius: 12px;
             object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-
-        .sobre-texto {
-            flex: 1;
-            min-width: 300px;
-        }
-
         .sobre-texto h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 16px;
+            font-size: 2rem;
             color: var(--color-primary);
+            margin-bottom: 20px;
         }
-
         .sobre-texto p {
-            line-height: 1.6;
-            margin-bottom: 16px;
-            font-family: 'PT Sans', sans-serif;
+            font-size: 1.1rem;
             color: var(--color-text);
+            margin-bottom: 15px;
         }
-
         .diferenciais {
             list-style: none;
-            margin-top: 16px;
-            padding-left: 0;
+            margin: 20px 0;
         }
-
         .diferenciais li {
-            margin-bottom: 8px;
+            margin: 10px 0;
+            padding-left: 25px;
             position: relative;
-            padding-left: 24px;
+            font-size: 1.1rem;
         }
-
         .diferenciais li::before {
-            content: "• ";
+            content: "•";
             color: var(--color-accent);
             position: absolute;
             left: 0;
-            top: 0;
+            font-size: 1.5rem;
         }
-
-    @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .sobre-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .sobre-texto {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
+            .sobre-img img { max-width: 300px; margin: 0 auto; }
         }
 
-
-        .btn-curriculo-wrap {
-            margin-top: 16px;
-        }
-
-        .btn-curriculo {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--color-accent);
-            color: #fff;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-        }
-
-        .btn-curriculo:hover {
-            background-color: #B18935;
-        }
-
-         /* TRATAMENTOS */
+        /* Tratamentos */
         .tratamentos-section {
-            background-color: #f8f8f8;
-            padding: 40px 16px;
+            background: #f9f9f9;
         }
-
         .tratamentos-section h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
-            margin-bottom: 16px;
             color: var(--color-primary);
             text-align: center;
+            margin-bottom: 20px;
         }
-
-        .tratamentos-section p.tratamentos-intro {
+        .tratamentos-intro {
             text-align: center;
-            margin-bottom: 24px;
-            font-family: 'PT Sans', sans-serif;
+            font-size: 1.1rem;
             color: var(--color-text);
+            margin-bottom: 30px;
         }
-
         .treatments-main-content {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
-
         .treatment-card {
             background: #fff;
+            padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-            text-align: left;
         }
-
         .treatment-card:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
-
         .treatment-card .icon {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--color-accent);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
-
         .treatment-card h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1.3rem;
             color: #333;
+            margin-bottom: 10px;
         }
-
-    .treatment-card p {
-            font-family: 'PT Sans', sans-serif;
+        .treatment-card p {
+            font-size: 1rem;
             color: #555;
-            line-height: 1.4;
-            display: block;
+        }
+        @media (max-width: 768px) {
+            .treatment-card {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                text-align: left;
+                padding: 20px;
+            }
+            .treatment-card .icon { order: 2; margin: 0; }
+            .treatment-card h3 { order: 1; font-size: 1.1rem; }
+            .desktop-only { display: none; }
         }
 
-        .desktop-only {
-            display: block;
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 1000;
         }
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .modal.active {
-            display: block;
-        }
-
+        .modal.active { display: block; }
         .modal-content {
-            background-color: #fefefe;
+            background: #fff;
             margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
+            padding: 30px;
             border-radius: 12px;
-            width: 80%;
             max-width: 600px;
             position: relative;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
         }
-
         .close-modal {
-            color: #aaa;
             position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close-modal:hover,
-        .close-modal:focus {
-            color: black;
-            text-decoration: none;
-        }
-
-        .cta-modal {
-            display: inline-block;
-            padding: 10px 15px;
-            margin: 5px;
-            background-color: var(--color-accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .cta-modal:hover {
-            background-color: #B18935;
-        }
-
-        /* Media query para Mobile */
-        @media (max-width: 768px) {
-            .treatments-main-content {
-                grid-template-columns: 1fr; /* 1 coluna no mobile */
-            }
-
-            .treatment-card {
-                display: flex;           /* Flexbox para inverter a ordem */
-                align-items: center; /* Centraliza verticalmente */
-                text-align: right;    /* Alinha o texto à direita */
-                padding: 16px;        /* Reduz um pouco o padding */
-
-            }
-
-            .treatment-card .icon {
-                margin-left: 12px; /*Espaço entre icone e texto*/
-                margin-bottom: 0;
-                order: 2;         /* Ícone depois do título */
-                flex-shrink: 0;  /* Impede que o ícone seja comprimido */
-
-            }
-
-            .treatment-card h3 {
-                order: 1;         /* Título antes do ícone */
-                font-size: 1rem;  /* Reduz um pouco o tamanho da fonte */
-                margin-bottom: 0; /* Remove a margem inferior */
-                text-align: left; /*Título alinhado à esquerda*/
-            }
-
-
-            .desktop-only {
-                display: none; /* Esconde o parágrafo no mobile */
-            }
-            .treatment-card:hover{
-                transform: scale(1.02);
-            }
-        }
-
-        /* ============== SEÇÃO METODOLOGIA + DEPOIMENTOS ============== */
-        .metodologia-depoimentos-section {
-            background-color: #fff;
-            padding: 40px 16px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .metodologia-depoimentos-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 32px;
-        }
-
-        /* Lado da Metodologia (cartoon timeline) */
-        .metodologia-lado {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .metodologia-lado h2 {
-            font-family: 'Montserrat', sans-serif;
+            top: 15px;
+            right: 20px;
             font-size: 1.8rem;
-            text-align: center;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close-modal:hover { color: #333; }
+        .cta-modal { margin: 10px 5px 0; }
+
+        /* Metodologia e Depoimentos */
+        .metodologia-depoimentos-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .metodologia-lado h2, .depoimentos-lado h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
             color: var(--color-primary);
-            margin-bottom: 24px;
+            text-align: center;
+            margin-bottom: 25px;
         }
-
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
         .timeline-item {
-            position: relative;
+            display: flex;
+            gap: 20px;
             margin-bottom: 40px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
         }
-
         .timeline-icon {
-            min-width: 50px;
-            min-height: 50px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background-color: var(--color-accent);
-            color: #fff;
+            background: var(--gradient-accent);
+            color: var(--color-white);
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(212,160,23,0.3);
             animation: cartoonBounce 2s infinite alternate;
         }
         @keyframes cartoonBounce {
-            0% { transform: translateY(0) rotate(0); }
-            100% { transform: translateY(-4px) rotate(-3deg); }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
         }
-
         .timeline-content {
-            background-color: #fff;
-            border: 2px dashed #ccc; /* estilo cartoon */
-            border-radius: 8px;
-            padding: 16px;
+            background: #fff;
+            padding: 20px;
+            border: 2px dashed #e0e0e0;
+            border-radius: 10px;
             flex: 1;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-
         .timeline-content h3 {
             font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
             color: var(--color-primary);
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
-
-        .timeline-content p {
-            font-family: 'PT Sans', sans-serif;
-            color: var(--color-text);
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* Responsivo da timeline */
-        @media (max-width: 768px) {
-            .timeline-item {
-                flex-direction: column;
-                align-items: center;
-            }
-            .timeline-icon {
-                margin-bottom: 8px;
-            }
-        }
-
-        /* Lado dos Depoimentos */
-        .depoimentos-lado {
-            flex: 1;
-            min-width: 300px;
-        }
-
-    .depoimentos-lado h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            text-align: center;
-            color: var(--color-primary);
-            margin-bottom: 24px;
-        }
-
         .depoimentos-grid {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 25px;
         }
-
         .depoimento-card {
             background: #fefefe;
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
-
-        .depoimento-card p {
-            color: var(--color-text);
-            line-height: 1.5;
-            margin-bottom: 8px;
+        .depoimento-card:hover {
+            transform: translateY(-3px);
         }
-
         .depoimento-autor {
             font-style: italic;
             font-size: 0.9rem;
             color: #666;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .metodologia-depoimentos-container {
+                grid-template-columns: 1fr;
+            }
+            .timeline-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
         }
 
-        .btn-ver-mais {
-            display: inline-block;
-            background: var(--color-accent);
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .btn-ver-mais:hover {
-            background: #B18935;
-        }
-
-        /* ============= MODAL DE DEPOIMENTOS ============= */
+        /* Modal Depoimentos */
         .modal-depoimentos {
+            display: none;
             position: fixed;
             top: 50%;
             left: 50%;
@@ -714,187 +475,123 @@
             background: #272322;
             width: 90%;
             max-width: 700px;
-            height: 70%;
-            border-radius: 16px;
-            /*display: none;  Removido display none */
+            max-height: 80vh;
+            border-radius: 12px;
             z-index: 999;
-            overflow: hidden;
-            display: none; /* Adicionado para o modal simples */
-        }
-        .modal-depoimentos.active{
-            display: block;
-        }
-
-        .modal-content-depoimentos {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            padding: 16px;
-            box-sizing: border-box;
             overflow-y: auto;
-            color: #fff;
         }
-
+        .modal-depoimentos.active { display: block; }
+        .modal-content-depoimentos {
+            padding: 25px;
+            color: var(--color-white);
+        }
         .modal-content-depoimentos h3 {
             font-family: 'Montserrat', sans-serif;
-            margin-bottom: 16px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
         }
-    .modal-depoimentos .close-modal {
-        position: absolute;
-        top: 16px;
-        right: 16px;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1.2rem;
-         cursor: pointer;
-}
-    .modal-blur-layer {  /*Removido o blur */
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        pointer-events: none;
+        .modal-depoimentos .close-modal {
+            top: 20px;
+            right: 25px;
+            font-size: 1.5rem;
+            color: var(--color-white);
+        }
 
-    }
+        /* Botões Flutuantes */
+        .floating-whatsapp, .floating-autismo {
+            position: fixed;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .floating-whatsapp { bottom: 20px; background: #25D366; }
+        .floating-autismo { bottom: 80px; background: #0052cc; }
+        .floating-whatsapp:hover, .floating-autismo:hover {
+            transform: scale(1.1);
+        }
+        .floating-whatsapp i, .floating-autismo i { font-size: 1.5rem; }
+        @media (max-width: 768px) {
+            .floating-whatsapp, .floating-autismo {
+                width: 40px;
+                height: 40px;
+            }
+            .floating-whatsapp i, .floating-autismo i { font-size: 1.2rem; }
+        }
 
-    /* =========== BOTÕES FLUTUANTES (WHATSAPP / AUTISMO) =========== */
-    .floating-whatsapp,
-    .floating-autismo {
-        position: fixed;
-        right: 20px;
-        border-radius: 50px;
-        padding: 12px 16px;
-        color: #fff;
-        font-family: 'Montserrat', sans-serif;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s;
-        z-index: 1000;
-    }
+        /* Formulário */
+        .form-container {
+            background: #f2f2f2;
+        }
+        .form-container h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--color-text);
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: var(--color-accent);
+            outline: none;
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        @media (max-width: 768px) {
+            .form-container { padding: 40px 15px; }
+        }
 
-    .floating-whatsapp:hover,
-    .floating-autismo:hover {
-        transform: scale(1.05);
-    }
-
-    .floating-whatsapp {
-        bottom: 20px;
-        background-color: #25D366; /* verde WhatsApp */
-    }
-
-    .floating-autismo {
-        bottom: 80px; /* para ficar acima do WA */
-        background-color: #0052cc; /* ou outro tom de azul, ajustável */
-    }
-
-    /***************************
-    FORMULARIO DE CAPTURA
-    ***************************/
-
-    .form-container {
-        background-color: #f0f0f0;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        max-width: 500px; /* Ajuste conforme necessário */
-        margin: 20px auto; /* Centraliza o formulário */
-    }
-     .form-container h2{
-        text-align: center;
-        margin-bottom: 1rem;
-     }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .form-group label {
-        display: block; /* Faz a label ocupar a linha toda */
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="tel"],
-    .form-group textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-family: 'PT Sans', sans-serif; /* Usa a fonte do site */
-    }
-
-    .form-group textarea {
-        resize: vertical; /* Permite redimensionar verticalmente */
-        min-height: 100px;
-    }
-
-    .form-group input[type="submit"] {
-        background-color: var(--color-accent);
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
-        transition: background-color 0.3s ease;
-        display: block; /*Ocupa a linha toda*/
-        width: 100%;
-        font-size: 1rem;
-    }
-
-    .form-group input[type="submit"]:hover {
-        background-color: #B18935;
-    }
-     .form-group select{
-         width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-family: 'PT Sans', sans-serif;
-        background-color: #fff;
-    }
-
-    /* FOOTER */
-    .site-footer {
-        background-color: var(--color-primary);
-        padding: 24px 16px;
-        color: var(--color-white);
-    }
-
-    .footer-container {
-        max-width: 120;
-      margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .footer-links {
-        list-style: none;
-        display: flex;
-        gap: 16px;
-    }
-
-    .footer-links a {
-        color: var(--color-white);
-        text-decoration: none;
-    }
-
-    .footer-links a:hover {
-        color: var(--color-accent);
-    }
-
-    /* --- (FIM DO CSS) --- */
+        /* Footer */
+        .site-footer {
+            background: var(--gradient-primary);
+            color: var(--color-white);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            margin: 15px 0;
+        }
+        .footer-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--color-accent); }
     </style>
 </head>
 <body>
-
     <header class="site-header" role="banner">
         <div class="container header-container">
             <div class="logo" id="logo-header">
@@ -914,7 +611,7 @@
                 </ul>
             </nav>
             <div class="header-cta">
-                <a href="#contato" class="btn-cta" id="btnAgendarHeader" aria-label="Agende sua consulta">Agende Agora</a>
+                <a href="#contato" class="btn" id="btnAgendarHeader" aria-label="Agende sua consulta">Agende Agora</a>
             </div>
         </div>
     </header>
@@ -925,35 +622,31 @@
                 <div class="content">
                     <h2 class="name" id="headline-consulta">Consulta de 2h sem pressa</h2>
                     <p class="description" id="subheadline-consulta">Aproveite uma abordagem completa e profunda, sem correria.</p>
-                    <a class="cta" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-consulta subheadline-consulta">Agendar pelo WhatsApp</a>
+                    <a class="btn" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-consulta subheadline-consulta">Agendar pelo WhatsApp</a>
                 </div>
             </div>
-
             <div class="item" style="background-image: url('https://i.postimg.cc/DZfgR0s8/Finland.jpg');">
                 <div class="content">
                     <h2 class="name" id="headline-domicilio">Atendimento a Domicílio</h2>
                     <p class="description" id="subheadline-domicilio">Foco 100% no paciente, no local de sua preferência.</p>
-                    <a class="cta" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-domicilio subheadline-domicilio">Falar no WhatsApp</a>
+                    <a class="btn" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-domicilio subheadline-domicilio">Falar no WhatsApp</a>
                 </div>
             </div>
-
-                <div class="item" style="background-image: url('https://i.postimg.cc/kX2jn2HS/Iceland.jpg');">
+            <div class="item" style="background-image: url('https://i.postimg.cc/kX2jn2HS/Iceland.jpg');">
                 <div class="content">
                     <h2 class="name" id="headline-especialista">Especialista em Saúde Mental</h2>
                     <p class="description" id="subheadline-especialista">IA, análises linguísticas e mais de X anos de experiência.</p>
-                    <a class="cta" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-especialista subheadline-especialista">Quero Saber Mais</a>
+                    <a class="btn" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-especialista subheadline-especialista">Quero Saber Mais</a>
                 </div>
             </div>
-
             <div class="item" style="background-image: url('https://i.postimg.cc/05WWRYVx/Australia.jpg');">
                 <div class="content">
                     <h2 class="name" id="headline-canabidiol">Uso de Canabidiol e Narrativas</h2>
                     <p class="description" id="subheadline-canabidiol">Tratamento moderno (quando indicado) e abordagem humanizada.</p>
-                    <a class="cta" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-canabidiol subheadline-canabidiol">Entre em Contato</a>
+                    <a class="btn" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank" rel="noopener" aria-labelledby="headline-canabidiol subheadline-canabidiol">Entre em Contato</a>
                 </div>
             </div>
         </div>
-
         <div class="slider-controls">
             <button class="prev" aria-label="Slide anterior"><i class="fa-solid fa-arrow-left"></i></button>
             <button class="next" aria-label="Próximo slide"><i class="fa-solid fa-arrow-right"></i></button>
@@ -967,24 +660,17 @@
             </div>
             <div class="sobre-texto">
                 <h2>Sobre o Dr. Gustavo Mendes</h2>
-                <p>
-                    Dr. Gustavo Mendes é um médico psiquiatra dedicado ao cuidado da saúde mental, com ampla experiência no tratamento de pacientes que enfrentam <a href="#modalAnsiedade" data-modal="modalAnsiedade">ansiedade</a>, <a href="#modalDepressao" data-modal="modalDepressao">depressão</a>, <a href="#modalAutismo" data-modal="modalAutismo">autismo (TEA)</a>, <a href="#modalBurnout" data-modal="modalBurnout">síndrome de burnout</a>, <a href="#modalTDAH" data-modal="modalTDAH">TDAH</a>, entre outras condições.
-                </p>
-                <p>
-                    Além de oferecer consultas com duração estendida de 2 horas e a conveniência do atendimento a domicílio (conforme disponibilidade), Dr. Gustavo se destaca por integrar terapias modernas e baseadas em evidências científicas. Isso inclui o uso terapêutico de canabidiol (quando clinicamente indicado) e abordagens inovadoras como a análise de narrativas, potencializada por inteligência artificial.
-                </p>
-                    <ul class="diferenciais">
-                        <li>Consultas aprofundadas de 2 horas, sem pressa.</li>
-                        <li>Utilização de inteligência artificial para análise de narrativas.</li>
-                        <li>Abordagem humanizada e focada nas histórias de vida dos pacientes.</li>
-                         <li>Atendimento a domicílio (verificar disponibilidade).</li>
-                        <li>Prescrição de canabidiol (quando indicado).</li>
-                    </ul>
-
+                <p>Dr. Gustavo Mendes é um médico psiquiatra dedicado ao cuidado da saúde mental, com ampla experiência no tratamento de pacientes que enfrentam <a href="#modalAnsiedade" data-modal="modalAnsiedade">ansiedade</a>, <a href="#modalDepressao" data-modal="modalDepressao">depressão</a>, <a href="#modalAutismo" data-modal="modalAutismo">autismo (TEA)</a>, <a href="#modalBurnout" data-modal="modalBurnout">síndrome de burnout</a>, <a href="#modalTDAH" data-modal="modalTDAH">TDAH</a>, entre outras condições.</p>
+                <p>Além de oferecer consultas com duração estendida de 2 horas e a conveniência do atendimento a domicílio (conforme disponibilidade), Dr. Gustavo se destaca por integrar terapias modernas e baseadas em evidências científicas. Isso inclui o uso terapêutico de canabidiol (quando clinicamente indicado) e abordagens inovadoras como a análise de narrativas, potencializada por inteligência artificial.</p>
+                <ul class="diferenciais">
+                    <li>Consultas aprofundadas de 2 horas, sem pressa.</li>
+                    <li>Utilização de inteligência artificial para análise de narrativas.</li>
+                    <li>Abordagem humanizada e focada nas histórias de vida dos pacientes.</li>
+                    <li>Atendimento a domicílio (verificar disponibilidade).</li>
+                    <li>Prescrição de canabidiol (quando indicado).</li>
+                </ul>
                 <div class="btn-curriculo-wrap">
-                    <a href="https://portfolio.orcann.com" target="_blank" rel="noopener" class="btn-curriculo" aria-label="Ver currículo completo do Dr. Gustavo Mendes">
-                         Currículo Completo
-                    </a>
+                    <a href="https://portfolio.orcann.com" target="_blank" rel="noopener" class="btn" aria-label="Ver currículo completo do Dr. Gustavo Mendes">Currículo Completo</a>
                 </div>
             </div>
         </div>
@@ -992,89 +678,60 @@
 
     <section id="tratamentos" class="tratamentos-section" data-aos="fade-up" role="region" aria-label="Tratamentos oferecidos">
         <h2>Tratamentos e Áreas de Atuação</h2>
-        <p class="tratamentos-intro">
-            Confira os principais temas que atendo. Clique para ver detalhes:
-        </p>
-
+        <p class="tratamentos-intro">Confira os principais temas que atendo. Clique para ver detalhes:</p>
         <div class="treatments-main-content" role="list">
             <div class="treatment-card" data-modal="modalAutismo" role="listitem">
                 <div class="icon"><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i></div>
-                <h3 id="autismo-titulo">
-                    <a href="#modalAutismo" data-modal="modalAutismo" aria-labelledby="autismo-titulo">Autismo (TEA)</a>
-                </h3>
+                <h3 id="autismo-titulo"><a href="#modalAutismo" data-modal="modalAutismo" aria-labelledby="autismo-titulo">Autismo (TEA)</a></h3>
                 <p class="desktop-only">Abordagem especializada, acolhimento familiar e intervenções personalizadas.</p>
             </div>
-
             <div class="treatment-card" data-modal="modalBurnout" role="listitem">
                 <div class="icon"><i class="fa-solid fa-battery-empty" aria-hidden="true"></i></div>
-                 <h3 id="burnout-titulo">
-                    <a href="#modalBurnout" data-modal="modalBurnout" aria-labelledby="burnout-titulo">Burnout</a>
-                </h3>
+                <h3 id="burnout-titulo"><a href="#modalBurnout" data-modal="modalBurnout" aria-labelledby="burnout-titulo">Burnout</a></h3>
                 <p class="desktop-only">Esgotamento profissional e estresse crônico: prevenção e tratamento.</p>
             </div>
-
-             <div class="treatment-card" data-modal="modalAnsiedade" role="listitem">
+            <div class="treatment-card" data-modal="modalAnsiedade" role="listitem">
                 <div class="icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></div>
-                <h3 id="ansiedade-titulo">
-                    <a href="#modalAnsiedade" data-modal="modalAnsiedade" aria-labelledby="ansiedade-titulo">Ansiedade</a>
-                </h3>
+                <h3 id="ansiedade-titulo"><a href="#modalAnsiedade" data-modal="modalAnsiedade" aria-labelledby="ansiedade-titulo">Ansiedade</a></h3>
                 <p class="desktop-only">Reduza os sintomas e conquiste mais tranquilidade no seu dia a dia.</p>
             </div>
-
             <div class="treatment-card" data-modal="modalTDAH" role="listitem">
                 <div class="icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
-                <h3 id="tdah-titulo">
-                    <a href="#modalTDAH" data-modal="modalTDAH" aria-labelledby="tdah-titulo">TDAH</a>
-                </h3>
+                <h3 id="tdah-titulo"><a href="#modalTDAH" data-modal="modalTDAH" aria-labelledby="tdah-titulo">TDAH</a></h3>
                 <p class="desktop-only">Transtorno do Déficit de Atenção e Hiperatividade: diagnóstico e tratamento.</p>
             </div>
-
-             <div class="treatment-card" data-modal="modalInsonia" role="listitem">
+            <div class="treatment-card" data-modal="modalInsonia" role="listitem">
                 <div class="icon"><i class="fa-solid fa-bed" aria-hidden="true"></i></div>
-                <h3 id="insonia-titulo">
-                    <a href="#modalInsonia" data-modal="modalInsonia" aria-labelledby="insonia-titulo">Insônia</a>
-                </h3>
+                <h3 id="insonia-titulo"><a href="#modalInsonia" data-modal="modalInsonia" aria-labelledby="insonia-titulo">Insônia</a></h3>
                 <p class="desktop-only">Técnicas e intervenções para melhorar a qualidade do seu sono.</p>
             </div>
-
             <div class="treatment-card" data-modal="modalCompulsao" role="listitem">
                 <div class="icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
-                 <h3 id="compulsao-titulo">
-                    <a href="#modalCompulsao" data-modal="modalCompulsao" aria-labelledby="compulsao-titulo">Compulsão Alimentar</a>
-                </h3>
+                <h3 id="compulsao-titulo"><a href="#modalCompulsao" data-modal="modalCompulsao" aria-labelledby="compulsao-titulo">Compulsão Alimentar</a></h3>
                 <p class="desktop-only">Estratégias para transtornos alimentares e questões de imagem corporal.</p>
             </div>
-
-             <div class="treatment-card" data-modal="modalTraumas" role="listitem">
+            <div class="treatment-card" data-modal="modalTraumas" role="listitem">
                 <div class="icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
-                <h3 id="traumas-titulo">
-                    <a href="#modalTraumas" data-modal="modalTraumas" aria-labelledby="traumas-titulo">Traumas</a>
-                </h3>
+                <h3 id="traumas-titulo"><a href="#modalTraumas" data-modal="modalTraumas" aria-labelledby="traumas-titulo">Traumas</a></h3>
                 <p class="desktop-only">Suporte especializado em casos de violência ou traumas severos.</p>
             </div>
-
             <div class="treatment-card" data-modal="modalLuto" role="listitem">
                 <div class="icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
-                <h3 id="luto-titulo">
-                    <a href="#modalLuto" data-modal="modalLuto" aria-labelledby="luto-titulo">Luto</a>
-                </h3>
+                <h3 id="luto-titulo"><a href="#modalLuto" data-modal="modalLuto" aria-labelledby="luto-titulo">Luto</a></h3>
                 <p class="desktop-only">Acolhimento e suporte para lidar com perdas e processos de luto.</p>
             </div>
-
             <div class="treatment-card" data-modal="modalDepressao" role="listitem">
                 <div class="icon"><i class="fa-solid fa-face-sad-tear" aria-hidden="true"></i></div>
-                <h3 id="depressao-titulo">
-                    <a href="#modalDepressao" data-modal="modalDepressao" aria-labelledby="depressao-titulo">Depressão</a>
-                </h3>
+                <h3 id="depressao-titulo"><a href="#modalDepressao" data-modal="modalDepressao" aria-labelledby="depressao-titulo">Depressão</a></h3>
                 <p class="desktop-only">Tratamento médico e terapêutico em diferentes estágios da depressão.</p>
             </div>
         </div>
 
         <div id="modalAutismo" class="modal" role="dialog" aria-labelledby="autismo-titulo" aria-describedby="autismo-conteudo">
             <div class="modal-content">
-                <span class="close-modal" data-close="modalAutismo" aria-label="Fechar modal">&times;</span>
+                <span class="close-modal" data-close="modalAutismo" aria-label="Fechar modal">×</span>
                 <h3 id="autismo-conteudo">Autismo (TEA)</h3>
-                <p>O Transtorno do Espectro Autista (TEA) é uma condição neurodesenvolvimental que afeta a comunicação, interação social e comportamento.  Ofereço uma abordagem especializada e acolhedora para pacientes com TEA e suas famílias, com intervenções personalizadas.</p>
+                <p>O Transtorno do Espectro Autista (TEA) é uma condição neurodesenvolvimental que afeta a comunicação, interação social e comportamento. Ofereço uma abordagem especializada e acolhedora para pacientes com TEA e suas famílias, com intervenções personalizadas.</p>
                 <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Avaliação diagnóstica abrangente.</li>
@@ -1083,18 +740,16 @@
                     <li>Suporte e orientação para famílias.</li>
                     <li>Acompanhamento contínuo e adaptação das estratégias conforme necessário.</li>
                 </ul>
-
-                <a href="#contato" class="cta-modal">Agendar Consulta</a>
-                <a href="blog.html" class="cta-modal">Ver Blog</a>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
             </div>
         </div>
-
         <div id="modalBurnout" class="modal" role="dialog" aria-labelledby="burnout-titulo" aria-describedby="burnout-conteudo">
             <div class="modal-content">
-                <span class="close-modal" data-close="modalBurnout" aria-label="Fechar modal">&times;</span>
+                <span class="close-modal" data-close="modalBurnout" aria-label="Fechar modal">×</span>
                 <h3 id="burnout-conteudo">Burnout</h3>
-                <p>A Síndrome de Burnout, ou esgotamento profissional, é um estado de exaustão física, emocional e mental causado pelo estresse crônico no trabalho.  Ofereço estratégias de prevenção e tratamento para ajudar você a recuperar o equilíbrio e a qualidade de vida.</p>
-                 <p><strong>Como posso ajudar:</strong></p>
+                <p>A Síndrome de Burnout, ou esgotamento profissional, é um estado de exaustão física, emocional e mental causado pelo estresse crônico no trabalho. Ofereço estratégias de prevenção e tratamento para ajudar você a recuperar o equilíbrio e a qualidade de vida.</p>
+                <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Identificação dos fatores de risco e gatilhos do burnout.</li>
                     <li>Desenvolvimento de estratégias de enfrentamento (coping) saudáveis.</li>
@@ -1102,16 +757,15 @@
                     <li>Reavaliação de prioridades e estabelecimento de limites.</li>
                     <li>Acompanhamento terapêutico para promover mudanças sustentáveis.</li>
                 </ul>
-                <a href="#contato" class="cta-modal">Agendar Consulta</a>
-                <a href="blog.html" class="cta-modal">Ver Blog</a>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
             </div>
         </div>
-
         <div id="modalAnsiedade" class="modal" role="dialog" aria-labelledby="ansiedade-titulo" aria-describedby="ansiedade-conteudo">
             <div class="modal-content">
-                <span class="close-modal" data-close="modalAnsiedade" aria-label="Fechar modal">&times;</span>
+                <span class="close-modal" data-close="modalAnsiedade" aria-label="Fechar modal">×</span>
                 <h3 id="ansiedade-conteudo">Ansiedade</h3>
-                <p>A ansiedade é uma emoção normal, mas quando se torna excessiva e persistente, pode interferir significativamente na vida diária.  Ofereço tratamento para diferentes tipos de transtornos de ansiedade, ajudando você a reduzir os sintomas e conquistar mais tranquilidade.</p>
+                <p>A ansiedade é uma emoção normal, mas quando se torna excessiva e persistente, pode interferir significativamente na vida diária. Ofereço tratamento para diferentes tipos de transtornos de ansiedade, ajudando você a reduzir os sintomas e conquistar mais tranquilidade.</p>
                 <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Diagnóstico preciso do tipo de transtorno de ansiedade (TAG, pânico, fobia social, etc.).</li>
@@ -1120,17 +774,16 @@
                     <li>Medicamentos ansiolíticos (quando indicado).</li>
                     <li>Plano de tratamento individualizado.</li>
                 </ul>
-                <a href="#contato" class="cta-modal">Agendar Consulta</a>
-                <a href="blog.html" class="cta-modal">Ver Blog</a>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
             </div>
         </div>
-
         <div id="modalTDAH" class="modal" role="dialog" aria-labelledby="tdah-titulo" aria-describedby="tdah-conteudo">
-          <div class="modal-content">
-            <span class="close-modal" data-close="modalTDAH" aria-label="Fechar modal">&times;</span>
-            <h3 id="tdah-conteudo">TDAH</h3>
-            <p>O Transtorno do Déficit de Atenção e Hiperatividade (TDAH) é uma condição neurobiológica que afeta a atenção, a impulsividade e a atividade motora. Ofereço avaliação, diagnóstico e tratamento para crianças, adolescentes e adultos com TDAH.</p>
-             <p><strong>Como posso ajudar:</strong></p>
+            <div class="modal-content">
+                <span class="close-modal" data-close="modalTDAH" aria-label="Fechar modal">×</span>
+                <h3 id="tdah-conteudo">TDAH</h3>
+                <p>O Transtorno do Déficit de Atenção e Hiperatividade (TDAH) é uma condição neurobiológica que afeta a atenção, a impulsividade e a atividade motora. Ofereço avaliação, diagnóstico e tratamento para crianças, adolescentes e adultos com TDAH.</p>
+                <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Avaliação completa para confirmar o diagnóstico de TDAH.</li>
                     <li>Psicoeducação sobre o transtorno.</li>
@@ -1138,17 +791,16 @@
                     <li>Treinamento de habilidades sociais.</li>
                     <li>Medicação estimulante ou não estimulante (quando indicada).</li>
                 </ul>
-            <a href="#contato" class="cta-modal">Agendar Consulta</a>
-            <a href="blog.html" class="cta-modal">Ver Blog</a>
-          </div>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
+            </div>
         </div>
-
         <div id="modalInsonia" class="modal" role="dialog" aria-labelledby="insonia-titulo" aria-describedby="insonia-conteudo">
-          <div class="modal-content">
-            <span class="close-modal" data-close="modalInsonia" aria-label="Fechar modal">&times;</span>
-            <h3 id="insonia-conteudo">Insônia</h3>
-            <p>A insônia é um distúrbio do sono caracterizado pela dificuldade em iniciar ou manter o sono, ou por um sono não reparador.  Ofereço técnicas e intervenções para melhorar a qualidade do seu sono e promover o bem-estar.</p>
-            <p><strong>Como posso ajudar:</strong></p>
+            <div class="modal-content">
+                <span class="close-modal" data-close="modalInsonia" aria-label="Fechar modal">×</span>
+                <h3 id="insonia-conteudo">Insônia</h3>
+                <p>A insônia é um distúrbio do sono caracterizado pela dificuldade em iniciar ou manter o sono, ou por um sono não reparador. Ofereço técnicas e intervenções para melhorar a qualidade do seu sono e promover o bem-estar.</p>
+                <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Identificação das causas da insônia.</li>
                     <li>Higiene do sono (hábitos e rotinas).</li>
@@ -1156,16 +808,15 @@
                     <li>Técnicas de relaxamento.</li>
                     <li>Medicação para dormir (em casos específicos e com acompanhamento).</li>
                 </ul>
-            <a href="#contato" class="cta-modal">Agendar Consulta</a>
-            <a href="blog.html" class="cta-modal">Ver Blog</a>
-          </div>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
+            </div>
         </div>
-
         <div id="modalCompulsao" class="modal" role="dialog" aria-labelledby="compulsao-titulo" aria-describedby="compulsao-conteudo">
             <div class="modal-content">
-                <span class="close-modal" data-close="modalCompulsao" aria-label="Fechar modal">&times;</span>
+                <span class="close-modal" data-close="modalCompulsao" aria-label="Fechar modal">×</span>
                 <h3 id="compulsao-conteudo">Compulsão Alimentar</h3>
-                <p>A compulsão alimentar é caracterizada por episódios recorrentes de ingestão excessiva de alimentos, acompanhados de sensação de perda de controle.  Ofereço estratégias para lidar com transtornos alimentares e promover uma relação mais saudável com a comida e com a imagem corporal.</p>
+                <p>A compulsão alimentar é caracterizada por episódios recorrentes de ingestão excessiva de alimentos, acompanhados de sensação de perda de controle. Ofereço estratégias para lidar com transtornos alimentares e promover uma relação mais saudável com a comida e com a imagem corporal.</p>
                 <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Avaliação e diagnóstico de transtornos alimentares.</li>
@@ -1174,17 +825,16 @@
                     <li>Abordagem multidisciplinar (com nutricionista, psicólogo, etc.).</li>
                     <li>Tratamento medicamentoso (quando necessário).</li>
                 </ul>
-                <a href="#contato" class="cta-modal">Agendar Consulta</a>
-                <a href="blog.html" class="cta-modal">Ver Blog</a>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
             </div>
         </div>
-
         <div id="modalTraumas" class="modal" role="dialog" aria-labelledby="traumas-titulo" aria-describedby="traumas-conteudo">
-          <div class="modal-content">
-            <span class="close-modal" data-close="modalTraumas" aria-label="Fechar modal">&times;</span>
-            <h3 id="traumas-conteudo">Traumas</h3>
-            <p>Experiências traumáticas, como violência, abuso ou acidentes, podem ter um impacto profundo na saúde mental. Ofereço suporte especializado para ajudar você a processar o trauma, desenvolver resiliência e recuperar o bem-estar.</p>
-           <p><strong>Como posso ajudar:</strong></p>
+            <div class="modal-content">
+                <span class="close-modal" data-close="modalTraumas" aria-label="Fechar modal">×</span>
+                <h3 id="traumas-conteudo">Traumas</h3>
+                <p>Experiências traumáticas, como violência, abuso ou acidentes, podem ter um impacto profundo na saúde mental. Ofereço suporte especializado para ajudar você a processar o trauma, desenvolver resiliência e recuperar o bem-estar.</p>
+                <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Avaliação do impacto do trauma.</li>
                     <li>Terapia focada no trauma (EMDR, TCC, etc.).</li>
@@ -1192,17 +842,16 @@
                     <li>Desenvolvimento de estratégias de enfrentamento.</li>
                     <li>Acompanhamento individualizado.</li>
                 </ul>
-            <a href="#contato" class="cta-modal">Agendar Consulta</a>
-            <a href="blog.html" class="cta-modal">Ver Blog</a>
-          </div>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
+            </div>
         </div>
-
         <div id="modalLuto" class="modal" role="dialog" aria-labelledby="luto-titulo" aria-describedby="luto-conteudo">
-          <div class="modal-content">
-            <span class="close-modal" data-close="modalLuto" aria-label="Fechar modal">&times;</span>
-            <h3 id="luto-conteudo">Luto</h3>
-            <p>O luto é um processo natural de adaptação a uma perda significativa.  Ofereço acolhimento e suporte para ajudar você a lidar com as emoções do luto, encontrar significado e seguir em frente.</p>
-            <p><strong>Como posso ajudar:</strong></p>
+            <div class="modal-content">
+                <span class="close-modal" data-close="modalLuto" aria-label="Fechar modal">×</span>
+                <h3 id="luto-conteudo">Luto</h3>
+                <p>O luto é um processo natural de adaptação a uma perda significativa. Ofereço acolhimento e suporte para ajudar você a lidar com as emoções do luto, encontrar significado e seguir em frente.</p>
+                <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Acolhimento e validação das emoções do luto.</li>
                     <li>Suporte para lidar com as diferentes fases do luto.</li>
@@ -1210,17 +859,16 @@
                     <li>Ajuda para encontrar novos significados e propósitos.</li>
                     <li>Acompanhamento individual ou em grupo (se disponível).</li>
                 </ul>
-            <a href="#contato" class="cta-modal">Agendar Consulta</a>
-            <a href="blog.html" class="cta-modal">Ver Blog</a>
-          </div>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
+            </div>
         </div>
-
         <div id="modalDepressao" class="modal" role="dialog" aria-labelledby="depressao-titulo" aria-describedby="depressao-conteudo">
-          <div class="modal-content">
-            <span class="close-modal" data-close="modalDepressao" aria-label="Fechar modal">&times;</span>
-            <h3 id="depressao-conteudo">Depressão</h3>
-            <p>A depressão é um transtorno mental que afeta o humor, o pensamento e o comportamento.  Ofereço tratamento médico e terapêutico para diferentes estágios da depressão, ajudando você a recuperar a alegria de viver.</p>
-            <p><strong>Como posso ajudar:</strong></p>
+            <div class="modal-content">
+                <span class="close-modal" data-close="modalDepressao" aria-label="Fechar modal">×</span>
+                <h3 id="depressao-conteudo">Depressão</h3>
+                <p>A depressão é um transtorno mental que afeta o humor, o pensamento e o comportamento. Ofereço tratamento médico e terapêutico para diferentes estágios da depressão, ajudando você a recuperar a alegria de viver.</p>
+                <p><strong>Como posso ajudar:</strong></p>
                 <ul>
                     <li>Avaliação e diagnóstico da depressão (leve, moderada, grave).</li>
                     <li>Terapia cognitivo-comportamental (TCC).</li>
@@ -1228,142 +876,123 @@
                     <li>Medicação antidepressiva (quando indicada).</li>
                     <li>Acompanhamento regular e ajuste do tratamento.</li>
                 </ul>
-
-            <a href="#contato" class="cta-modal">Agendar Consulta</a>
-            <a href="blog.html" class="cta-modal">Ver Blog</a>
-          </div>
+                <a href="#contato" class="btn cta-modal">Agendar Consulta</a>
+                <a href="blog.html" class="btn cta-modal">Ver Blog</a>
+            </div>
         </div>
     </section>
 
     <section id="metodologia-e-depoimentos" class="metodologia-depoimentos-section" data-aos="fade-up" role="region" aria-label="Metodologia e depoimentos">
         <div class="metodologia-depoimentos-container">
-
             <div class="metodologia-lado">
                 <h2>Como Funciona a Consulta</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-                        </div>
+                        <div class="timeline-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
                         <div class="timeline-content">
                             <h3>1. Agendamento</h3>
                             <p>Escolha o melhor dia e horário para você. Informe se deseja atendimento presencial (em consultório ou a domicílio, conforme disponibilidade) ou online.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fa-solid fa-comments" aria-hidden="true"></i>
-                        </div>
+                        <div class="timeline-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
                         <div class="timeline-content">
                             <h3>2. Avaliação Inicial</h3>
                             <p>Uma conversa detalhada para compreender seu histórico de saúde, seus sintomas atuais, suas preocupações e seus objetivos com o tratamento.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fa-solid fa-user-clock" aria-hidden="true"></i>
-                        </div>
+                        <div class="timeline-icon"><i class="fa-solid fa-user-clock" aria-hidden="true"></i></div>
                         <div class="timeline-content">
                             <h3>3. Consulta de 2 Horas</h3>
                             <p>Uma consulta aprofundada, sem pressa, onde utilizo ferramentas como a análise de narrativas (com apoio de IA, para identificar padrões) e uma escuta atenta e acolhedora.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-icon">
-                             <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
-                        </div>
+                        <div class="timeline-icon"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></div>
                         <div class="timeline-content">
-                             <h3>4. Plano Terapêutico Personalizado</h3>
-                             <p>Desenvolvimento de um plano de tratamento individualizado, que pode incluir terapia, medicação (como canabidiol, se indicado), mudanças no estilo de vida e outras abordagens.</p>
+                            <h3>4. Plano Terapêutico Personalizado</h3>
+                            <p>Desenvolvimento de um plano de tratamento individualizado, que pode incluir terapia, medicação (como canabidiol, se indicado), mudanças no estilo de vida e outras abordagens.</p>
                         </div>
                     </div>
-                     <div class="timeline-item">
-                        <div class="timeline-icon">
-                             <i class="fa-solid fa-hands-helping" aria-hidden="true"></i>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fa-solid fa-hands-helping" aria-hidden="true"></i></div>
+                        <div class="timeline-content">
+                            <h3>5. Acompanhamento Contínuo</h3>
+                            <p>Suporte contínuo, com reavaliações regulares para ajustar o tratamento conforme necessário e garantir os melhores resultados.</p>
                         </div>
-                    <div class="timeline-content">
-                        <h3>5. Acompanhamento Contínuo</h3>
-                        <p>Suporte contínuo, com reavaliações regulares para ajustar o tratamento conforme necessário e garantir os melhores resultados.</p>
-                    </div>
                     </div>
                 </div>
             </div>
-
             <div class="depoimentos-lado">
                 <h2>Depoimentos</h2>
-                 <div class="depoimentos-grid">
+                <div class="depoimentos-grid">
                     <div class="depoimento-card">
-                         <p>“Depois de passar por vários médicos, finalmente encontrei alguém que realmente dedicou tempo para entender todo meu histórico e minhas preocupações.  A consulta de 2 horas fez toda a diferença, me senti verdadeiramente escutado. Recomendo muito!”</p>
-                         <p class="depoimento-autor">— Paciente Anônimo</p>
-                         <a href="#" class="btn-ver-mais open-modal" data-modal="modal-depo1" aria-label="Ler depoimento completo">Ver mais</a>
-                        </div>
-
+                        <p>“Depois de passar por vários médicos, finalmente encontrei alguém que realmente dedicou tempo para entender todo meu histórico e minhas preocupações. A consulta de 2 horas fez toda a diferença, me senti verdadeiramente escutado. Recomendo muito!”</p>
+                        <p class="depoimento-autor">— Paciente Anônimo</p>
+                        <a href="#" class="btn btn-ver-mais open-modal" data-modal="modal-depo1" aria-label="Ler depoimento completo">Ver mais</a>
+                    </div>
                     <div class="depoimento-card">
                         <p>“A abordagem do Dr. Gustavo, combinando a análise de narrativas com a inteligência artificial, me ajudou a enxergar padrões no meu comportamento e nos meus pensamentos que eu nunca tinha percebido antes. Minha qualidade de vida melhorou significativamente!”</p>
                         <p class="depoimento-autor">— Marina S.</p>
-                        <a href="#" class="btn-ver-mais open-modal" data-modal="modal-depo2" aria-label="Ler depoimento completo">Ver mais</a>
-                        </div>
-                 </div>
+                        <a href="#" class="btn btn-ver-mais open-modal" data-modal="modal-depo2" aria-label="Ler depoimento completo">Ver mais</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <div id="modal-depo1" class="modal-depoimentos" role="dialog" aria-labelledby="depo1-titulo">
-      <div class="modal-content-depoimentos">
-        <button class="close-modal" data-close="modal-depo1" aria-label="Fechar modal">&times;</button>
-        <h3 id="depo1-titulo">Depoimento — Paciente Anônimo</h3>
-        <p>
-          “Depois de passar por vários médicos, finalmente encontrei alguém que realmente dedicou tempo para entender todo meu histórico e minhas preocupações. A consulta de 2 horas fez toda a diferença, me senti verdadeiramente escutado(a) e acolhido(a). O Dr. Gustavo não apenas ouviu, mas também me explicou as opções de tratamento de forma clara e me ajudou a escolher o melhor caminho. Recomendo muito!”
-        </p>
-      </div>
+        <div class="modal-content-depoimentos">
+            <button class="close-modal" data-close="modal-depo1" aria-label="Fechar modal">×</button>
+            <h3 id="depo1-titulo">Depoimento — Paciente Anônimo</h3>
+            <p>“Depois de passar por vários médicos, finalmente encontrei alguém que realmente dedicou tempo para entender todo meu histórico e minhas preocupações. A consulta de 2 horas fez toda a diferença, me senti verdadeiramente escutado(a) e acolhido(a). O Dr. Gustavo não apenas ouviu, mas também me explicou as opções de tratamento de forma clara e me ajudou a escolher o melhor caminho. Recomendo muito!”</p>
+        </div>
     </div>
-
     <div id="modal-depo2" class="modal-depoimentos" role="dialog" aria-labelledby="depo2-titulo">
-      <div class="modal-content-depoimentos">
-        <button class="close-modal" data-close="modal-depo2" aria-label="Fechar modal">&times;</button>
-        <h3 id="depo2-titulo">Depoimento — Marina S.</h3>
-        <p>
-            “A abordagem do Dr. Gustavo, combinando a análise de narrativas com a inteligência artificial, me ajudou a enxergar padrões no meu comportamento e nos meus pensamentos que eu nunca tinha percebido antes.  Isso foi fundamental para o meu processo de autoconhecimento e cura.  Minha qualidade de vida melhorou significativamente!”
-        </p>
-      </div>
+        <div class="modal-content-depoimentos">
+            <button class="close-modal" data-close="modal-depo2" aria-label="Fechar modal">×</button>
+            <h3 id="depo2-titulo">Depoimento — Marina S.</h3>
+            <p>“A abordagem do Dr. Gustavo, combinando a análise de narrativas com a inteligência artificial, me ajudou a enxergar padrões no meu comportamento e nos meus pensamentos que eu nunca tinha percebido antes. Isso foi fundamental para o meu processo de autoconhecimento e cura. Minha qualidade de vida melhorou significativamente!”</p>
+        </div>
     </div>
- <section class="form-container" id="form-lead">
-    <h2>Solicite um Contato</h2>
-    <p>Preencha o formulário abaixo e entraremos em contato para agendar sua consulta ou esclarecer suas dúvidas.</p>
-    <form action="#" method="post">
-        <div class="form-group">
-            <label for="nome">Nome Completo:</label>
-            <input type="text" id="nome" name="nome" required>
-        </div>
-        <div class="form-group">
-             <label for="email">Email:</label>
-             <input type="email" id="email" name="email" required>
-         </div>
-         <div class="form-group">
-             <label for="telefone">Telefone:</label>
-             <input type="tel" id="telefone" name="telefone" required>
-         </div>
-         <div class="form-group">
-            <label for="interesse">Principal Interesse:</label>
-             <select id="interesse" name="interesse">
-                 <option value="">Selecione</option>
-                 <option value="consulta">Consulta</option>
-                 <option value="informacoes">Mais Informações</option>
-                 <option value="domicilio">Atendimento Domiciliar</option>
-                 <option value="canabidiol">Canabidiol</option>
-                 <option value="outro">Outro</option>
-             </select>
-        </div>
-        <div class="form-group">
-             <label for="mensagem">Mensagem (Opcional):</label>
-             <textarea id="mensagem" name="mensagem" rows="4"></textarea>
-        </div>
-        <div class="form-group">
-             <input type="submit" value="Enviar">
-        </div>
 
-    </form>
-</section>
+    <section class="form-container" id="form-lead">
+        <h2>Solicite um Contato</h2>
+        <p>Preencha o formulário abaixo e entraremos em contato para agendar sua consulta ou esclarecer suas dúvidas.</p>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="interesse">Principal Interesse:</label>
+                <select id="interesse" name="interesse">
+                    <option value="">Selecione</option>
+                    <option value="consulta">Consulta</option>
+                    <option value="informacoes">Mais Informações</option>
+                    <option value="domicilio">Atendimento Domiciliar</option>
+                    <option value="canabidiol">Canabidiol</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem (Opcional):</label>
+                <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn" value="Enviar">
+            </div>
+        </form>
+    </section>
 
     <footer class="site-footer" role="contentinfo">
         <div class="footer-container">
@@ -1372,156 +1001,116 @@
                 <li><a href="#">Política de Privacidade</a></li>
                 <li><a href="#">Termos de Uso</a></li>
             </ul>
-            <div class="footer-contact"></p>
-                <p>
-                    Siga nas redes sociais:
-                    <a href="https://www.linkedin.com/in/drgustavomendes" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a> | Desenvolvido por: <a href="https://healthhealth.io" target="_blank">HEALTH / HEALTH</a></p>
-                </div>
+            <div class="footer-contact">
+                <p>Siga nas redes sociais: <a href="https://www.linkedin.com/in/drgustavomendes" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a> | Desenvolvido por: <a href="https://healthhealth.io" target="_blank">HEALTH / HEALTH</a></p>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-         <a href="https://api.whatsapp.com/send?phone=SEUNUMEROCOMPLETO" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Entre em contato pelo WhatsApp">
-             <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-
-         <a href="https://autismo.orcann.com" class="floating-autismo" target="_blank" rel="noopener" aria-label="Saiba mais sobre Autismo">
-              <i class="fa-solid fa-ribbon"></i> Autismo
-        </a>
+    <a href="https://api.whatsapp.com/send?phone=SEUNUMEROCOMPLETO" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Entre em contato pelo WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://autismo.orcann.com" class="floating-autismo" target="_blank" rel="noopener" aria-label="Saiba mais sobre Autismo">
+        <i class="fa-solid fa-ribbon"></i>
+    </a>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({ duration: 1000 });
 
-            // SLIDER
-            let nextBtn = document.querySelector('.next');
-            let prevBtn = document.querySelector('.prev');
-            let slide = document.querySelector('.slide');
-            let items = document.querySelectorAll('.item');
+            // Menu Mobile
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            const barsIcon = menuToggle.querySelector('.fa-bars');
+            const timesIcon = menuToggle.querySelector('.fa-times');
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                barsIcon.style.display = mainNav.classList.contains('active') ? 'none' : 'inline';
+                timesIcon.style.display = mainNav.classList.contains('active') ? 'inline' : 'none';
+            });
 
+            // Slider
+            const nextBtn = document.querySelector('.next');
+            const prevBtn = document.querySelector('.prev');
+            const slide = document.querySelector('.slide');
             nextBtn.addEventListener('click', () => {
-                let firstItem = slide.firstElementChild;
+                const firstItem = slide.firstElementChild;
                 slide.appendChild(firstItem);
                 updateActive();
             });
-
             prevBtn.addEventListener('click', () => {
-                let lastItem = slide.lastElementChild;
+                const lastItem = slide.lastElementChild;
                 slide.prepend(lastItem);
                 updateActive();
             });
-
             function updateActive() {
-                items = document.querySelectorAll('.item');
-                items.forEach(el => el.classList.remove('active'));
-                items[0].classList.add('active');
+                document.querySelectorAll('.item').forEach(el => el.classList.remove('active'));
+                slide.firstElementChild.classList.add('active');
             }
-
-            // Teclado
             document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') {
-                    nextBtn.click();
-                } else if (e.key === 'ArrowLeft') {
-                    prevBtn.click();
-                }
+                if (e.key === 'ArrowRight') nextBtn.click();
+                else if (e.key === 'ArrowLeft') prevBtn.click();
             });
-
-            // Swipe
             let startX = 0;
-            let endX = 0;
-            slide.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-            });
-            slide.addEventListener('touchmove', (e) => {
-                endX = e.touches[0].clientX;
-            });
-        slide.addEventListener('touchend', () => {
-                let diff = endX - startX;
-                if (diff < -50) {
-                    nextBtn.click();
-                } else if (diff > 50) {
-                    prevBtn.click();
-                }
+            slide.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
+            slide.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].clientX;
+                if (endX - startX < -50) nextBtn.click();
+                else if (endX - startX > 50) prevBtn.click();
             });
 
-            // MODAIS DE TRATAMENTO (Simples)
+            // Modais Tratamentos
             const openModalBtns = document.querySelectorAll('.treatment-card, .sobre-texto a[href^="#modal"]');
             const closeModalBtns = document.querySelectorAll('.close-modal');
-
             openModalBtns.forEach(btn => {
-                btn.addEventListener('click', (event) => {
-                    event.preventDefault(); // Impede o comportamento padrão do link, se for um <a>
-                    const modalId = btn.getAttribute('data-modal') || btn.getAttribute('href').substring(1); // Pega o ID do modal
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const modalId = btn.getAttribute('data-modal') || btn.getAttribute('href').substring(1);
                     document.getElementById(modalId).classList.add('active');
-                     document.body.style.overflow = 'hidden'; //Evita rolagem
+                    document.body.style.overflow = 'hidden';
                 });
             });
-
             closeModalBtns.forEach(btn => {
-                btn.addEventListener('click', (event) => {
-                     const modalId = event.target.getAttribute('data-close'); //Obtem o ID atraves do botao
+                btn.addEventListener('click', () => {
+                    const modalId = btn.getAttribute('data-close');
                     document.getElementById(modalId).classList.remove('active');
-                     document.body.style.overflow = ''; //Restaura rolagem
+                    document.body.style.overflow = '';
+                });
+            });
+            window.onclick = (e) => {
+                if (e.target.classList.contains('modal') || e.target.classList.contains('modal-depoimentos')) {
+                    e.target.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            // Modais Depoimentos
+            const openModalDepoBtns = document.querySelectorAll('.open-modal');
+            openModalDepoBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const modalId = btn.getAttribute('data-modal');
+                    document.getElementById(modalId).classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 });
             });
 
-            //Fecha o modal se clicar fora
-            window.onclick = (event) => {
-                if (event.target.classList.contains('modal')) {
-                    event.target.classList.remove('active');
-                    document.body.style.overflow = ''; // Restaura rolagem
-                }
-              if (event.target.classList.contains('modal-depoimentos')) {
-                    event.target.classList.remove('active');
-                    document.body.style.overflow = ''; // Restaura rolagem
+            // Header Mobile Text
+            function updateHeaderText() {
+                const logoHeader = document.getElementById('logo-header');
+                const btnAgendarHeader = document.getElementById('btnAgendarHeader');
+                if (window.innerWidth <= 768) {
+                    logoHeader.querySelector('a').textContent = 'Dr. Gustavo';
+                    btnAgendarHeader.textContent = 'Agendar';
+                } else {
+                    logoHeader.querySelector('a').textContent = 'Dr. Gustavo Mendes';
+                    btnAgendarHeader.textContent = 'Agende Agora';
                 }
             }
-
-             // Lógica de modal Depoimentos
-            const openModalDepoBtns = document.querySelectorAll('.open-modal');
-
-            openModalDepoBtns.forEach(btn => {
-              btn.addEventListener('click', e => {
-                e.preventDefault();
-                const modalId = btn.getAttribute('data-modal');
-                document.getElementById(modalId).classList.add('active');
-                document.body.style.overflow = 'hidden'; //Evita rolagem
-
-              });
-            });
-        //Fecha modal depoimentos
-        const closeDepoBtns = document.querySelectorAll ('.modal-depoimentos .close-modal');
-        closeDepoBtns.forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            const modalId = e.target.getAttribute('data-close');
-            document.getElementById(modalId).classList.remove('active');
-            document.body.style.overflow = ''; //Restaura rolagem
-          });
+            updateHeaderText();
+            window.addEventListener('resize', updateHeaderText);
         });
-
-
-         // --- Início do código para alterar o header no mobile ---
-         function updateHeaderText() {
-            const logoHeader = document.getElementById('logo-header');
-            const btnAgendarHeader = document.getElementById('btnAgendarHeader');
-
-            if (window.innerWidth <= 768) { // Verifica se está em mobile
-                logoHeader.querySelector('a').textContent = 'Dr. Gustavo';
-                btnAgendarHeader.textContent = 'Agendar';
-            } else { // Desktop (ou se redimensionar)
-                logoHeader.querySelector('a').textContent = 'Dr. Gustavo Mendes';
-                btnAgendarHeader.textContent = 'Agende Agora';
-            }
-        }
-
-        // Executa a função na carga da página
-        updateHeaderText();
-
-        // Executa a função quando a janela é redimensionada
-        window.addEventListener('resize', updateHeaderText);
-        // --- Fim do código para alterar o header no mobile ---
-
-        }); // Fim do DOMContentLoaded
     </script>
 </body>
 </html>
